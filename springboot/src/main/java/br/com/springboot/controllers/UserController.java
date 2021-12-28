@@ -1,6 +1,6 @@
 package br.com.springboot.controllers;
 
-import br.com.springboot.model.User;
+import br.com.springboot.models.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -19,11 +19,8 @@ public class UserController {
 
         Optional<User> userFind = users.stream().filter(user -> user.getId() == id).findFirst();
 
-        if (userFind.isPresent()){
-            return userFind.get();
-        }
+        return userFind.orElse(null);
 
-        return null;
     }
 
     @PostMapping("/")
