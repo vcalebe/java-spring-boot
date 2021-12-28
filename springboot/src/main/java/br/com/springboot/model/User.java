@@ -1,14 +1,12 @@
-package br.com.springboot.models;
+package br.com.springboot.model;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
+@Table
 public class User {
 
     @Id
