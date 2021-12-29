@@ -45,15 +45,9 @@ public class UserController {
         return this.userRepository.findByIdGreaterThan(id);
     }
 
-//    arrumar
-    @PutMapping("/{id}")
-    public ResponseEntity user(@PathVariable Long id, @RequestBody User user) {
-        User currentUser = userRepository.findById(id).orElseThrow(RuntimeException::new);
-        currentUser.setName(user.getName());
-        currentUser.setUsername(user.getUsername());
-        currentUser = userRepository.save(user);
-
-        return ResponseEntity.ok(currentUser);
+    @PutMapping("/update")
+    public User userUpdate(@RequestBody User user){
+        return userRepository.save(user);
     }
 
     @DeleteMapping("/{id}")

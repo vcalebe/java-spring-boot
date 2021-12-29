@@ -10,4 +10,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
     public List<User> findByIdGreaterThan(Long id);
 
     public List<User> removeById(Long id);
+
 }
