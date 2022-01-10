@@ -34,12 +34,6 @@ public class UserController {
         return null;
     }
 
-    @PostMapping("/")
-    @ApiOperation(value = "Cadastra um novo usuario")
-    public User user(@RequestBody User user){
-        return this.userRepository.save(user);
-    }
-
     @GetMapping("/list")
     @ApiOperation(value = "Retorna uma lista de usuarios")
     public List<User> list(){
@@ -50,6 +44,12 @@ public class UserController {
     @ApiOperation(value = "Retorna uma lista de usuario em que o id seja maior que o passado como parametro")
     public List<User> listMoreThan(@PathVariable("id") Long id){
         return this.userRepository.findByIdGreaterThan(id);
+    }
+
+    @PostMapping("/")
+    @ApiOperation(value = "Cadastra um novo usuario")
+    public User user(@RequestBody User user){
+        return this.userRepository.save(user);
     }
 
     @PutMapping("/update")

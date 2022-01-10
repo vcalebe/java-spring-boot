@@ -29,17 +29,14 @@ public class SwaggerConfig {
 
     private ApiInfo metaInfo() {
 
-        ApiInfo apiInfo = new ApiInfo(
-            "Usuarios API REST",
-            "API REST de cadastro de usuarios.",
-            "1.0",
-            "Terms of Service",
-            new Contact("Victor Calebe", "https://github.com/vcalebe/java-spring-boot", "victorcalebesilva10@gmail.com"),
-            "Apache License Version 2.0",
-            "https://www.apache.org/licesen.html", new ArrayList<VendorExtension>()
-        );
-
-        return apiInfo;
+        return new ApiInfo(
+                "User API REST",
+                "Api for User registration",
+                "1.0",
+                "NA terms of service url",
+                new Contact("Victor Calebe","https://github.com/vcalebe/java-spring-boot", "victorcalebesilva10@gmail.com"),
+                "Apache License Version 2.0",
+                "https://www.apache.org/licesen.html");
     }
 
 }
